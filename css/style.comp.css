@@ -167,6 +167,7 @@ body {
     fill: var(--color-grey-dark-3); }
 
 .user-nav {
+  position: relative;
   align-self: stretch;
   display: flex;
   align-items: center; }
@@ -201,6 +202,21 @@ body {
     height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem; }
+  .user-nav__user:hover + .user-menu {
+    display: block;
+    height: 13rem;
+    z-index: 4;
+    position: absolute;
+    top: 98%;
+    left: 50%;
+    background-color: var(--color-grey-light-2); }
+
+.user-menu {
+  display: none; }
+  .user-menu__list {
+    list-style: none; }
+  .user-menu__item {
+    line-height: 2; }
 
 .side-nav {
   font-size: 1.4rem;
@@ -276,9 +292,28 @@ body {
 
 .gallery {
   display: flex; }
+  .gallery__item {
+    position: relative; }
+    .gallery__item:hover figcaption {
+      opacity: 1;
+      transform: translate(-50%, -50%); }
   .gallery__photo {
     width: 100%;
     display: block; }
+  .gallery__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: var(--color-grey-light-1);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2em; }
 
 .overview {
   display: flex;
